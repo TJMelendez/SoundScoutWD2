@@ -1,5 +1,6 @@
-import logo from '/images/Logo Files/For Web/png/Color logo - no background.png';
-import search from '/images/search.png';
+import logo from '/src/images/Color logo - no background.png';
+import search from '/src/images/search.png';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     const handleClick = () => {
@@ -7,17 +8,21 @@ const NavBar = () => {
       };
     return (
         <nav className='flex bg-black items-center justify-between'>
-            <div className='flex items-center space-x-20'>
-                <button onClick={handleClick}>
+            <div className='navbar-links flex items-center space-x-20'>
+                <Link to ='/' className='link-class'>
+                    {/*<button onClick={handleClick}>*/}
                     <img className='w-32 h-32' src={logo} alt="Logo" />
-                </button>
+                    {/*</button>*/}
+                </Link>
                 <ul>
-                    <li className='text-white text-2xl'><a href='/'>Request Promotion</a></li>
+                    <li className='text-white text-2xl'><Link to='/request-promotion-form' className='link-class'>Request Promotion</Link></li>
                 </ul>
             </div>
-            <button onClick={handleClick}>
-                <img className='w-1/2 h-1/2' src={search} alt="Search Icon" />
-            </button>
+            {/*<Link to ='/' className=' '>*/}
+                <button onClick={handleClick}>
+                    <img className='w-1/2 h-1/2' src={search} alt="Search Icon" />
+                </button>
+            {/*</Link>*/}
         </nav>
     )
 };

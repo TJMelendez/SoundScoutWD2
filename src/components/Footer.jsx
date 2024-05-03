@@ -1,16 +1,14 @@
-import logo from '/images/Logo Files/For Web/png/Color logo - no background.png';
+import logo from '/src/images/Color logo - no background.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    const handleClick = () => {
-        console.log('Home Button Clicked!');
-      };
     return (
-        <footer className="flex">
+        <footer className='grid grid-cols-4 bg-black text-white text-center items-center justify-between'>
             <div>
                 <ul>
                     <li><a href='/'>About Us</a></li>
                     <li><a href='/'>Careers</a></li>
-                    <li><a href='/'>Request Promotion</a></li>
+                    <li><a href='/result'>Request Promotion</a></li>
                     <li><a href='/'>Search</a></li>
                 </ul>
             </div>
@@ -33,10 +31,12 @@ const Footer = () => {
                 </ul>
             </div>
 
-            <div>
-                <button onClick={handleClick}>
+            <div className='navbar-links flex items-center space-x-20'>
+                <Link to ='/' className='link-class'>
+                    {/*<button onClick={handleClick}>*/}
                     <img className='w-32 h-32' src={logo} alt="Logo" />
-                </button>
+                    {/*</button>*/}
+                </Link>
             </div>
         </footer>
     )
