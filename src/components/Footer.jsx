@@ -6,9 +6,9 @@ const Footer = () => {
         <footer className='grid grid-cols-4 bg-black text-white text-center items-center justify-between'>
             <div>
                 <ul>
-                    <li><a href='/'>About Us</a></li>
-                    <li><a href='/'>Careers</a></li>
-                    <li><a href='/result'>Request Promotion</a></li>
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li><a href='/request-promotion-form'>Request Promotion</a></li>
                     <li><a href='/'>Search</a></li>
                 </ul>
             </div>

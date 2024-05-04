@@ -25,7 +25,7 @@ const cards = [
 
 export default function ActionAreaCard() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
       {cards.map((card, index) => (
         <Card key={index} sx={{ maxWidth: 225, aspectRatio: '1/1', borderRadius: '50%' }}>
           <CardActionArea>
