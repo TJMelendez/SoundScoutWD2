@@ -18,11 +18,11 @@ const NavBar = () => {
                     <li className='text-white text-2xl'><Link to='/request-promotion-form' className='link-class'>Request Promotion</Link></li>
                 </ul>
             </div>
-            {/*<Link to ='/' className=' '>*/}
+            <Link to ='/results' className=' '>
                 <button onClick={handleClick}>
                     <img className='w-1/2 h-1/2' src={search} alt="Search Icon" />
                 </button>
-            {/*</Link>*/}
+            </Link>
         </nav>
     )
 };

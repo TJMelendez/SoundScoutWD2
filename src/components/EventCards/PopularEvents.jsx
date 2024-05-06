@@ -4,14 +4,16 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Button } from '@mui/material';
 import Box from '@mui/material/Box';
+import useFetchEvents from '/src/components/hooks/useFetchEvents.js';
 import { useState } from 'react';
 
 export default function ActionAreaCard() {
     const [cards, setCards] = useState([...Array(4)]);
-    const [state, setState] = useState('initialState');
+    const { data } = useFetchEvents();
+    console.log(data);
 
     const addCards = () => {
-        setCards([ ...Array(4)]); 
+        setCards([ ...cards, ...Array(4)]); 
 
     };
 
@@ -28,21 +30,23 @@ export default function ActionAreaCard() {
             gap: 2
         }}
         >
-        {cards.map((_, i) => (
+        {data && data._embedded && data._embedded.events.map((event, i) => (
             <Card key={i} sx={{ maxWidth: 225 }}>
             <CardActionArea>
                 <CardMedia
                 component="img"
                 height="225"
-                image="/src/images/pexels-martin-lopez-2240771 (1).jpg"
+                image={event.images[0].url}
                 alt="Artist/Group Image"
                 />
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Concert this date: 01-01-25
+                    {event.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    This artist is playing in your area
+                    {event.dates.start.localDate} 
+                    {event._embedded.venues[0].name}, 
+                    {event._embedded.venues[0].city.name}
                 </Typography>
                 </CardContent>
             </CardActionArea>
@@ -53,4 +57,4 @@ export default function ActionAreaCard() {
         </Button>
         </Box>
     );
-    }
+}
