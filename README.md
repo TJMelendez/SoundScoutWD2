@@ -13,7 +13,7 @@ The code incorporates references from various sources. Material UI was employed 
 - Redux: 'https://redux.js.org/introduction/getting-started'
 - Ticketmaster Discovery API: 'https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/'
 
-Deployment Link: ''
+Deployment Link: 'https://soundscout.netlify.app/'
 
 # React + Vite
 
