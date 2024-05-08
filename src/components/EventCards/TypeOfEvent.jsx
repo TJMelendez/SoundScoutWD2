@@ -7,19 +7,19 @@ import { Box } from '@mui/system';
 
 const cards = [
     {
-      image: '/src/images/akar-icons--rock-on.png',
+      image: 'https://media.istockphoto.com/id/1184468843/vector/rock-on-gesture-glyph-icon.jpg?s=612x612&w=0&k=20&c=8c4s03VZLcVdE_WI6eEPTIIHa5vETzeCTF8Lw3rU9cU=',
       title: 'Concerts',
     },
     {
-      image: '/src/images/material-symbols--celebration-outline.png',
+      image: 'https://media.istockphoto.com/id/1287458193/vector/party-popper-icon-isolated-party-popper-symbol-vector.jpg?s=612x612&w=0&k=20&c=O2hpxLRG2Fk-vTnf5_Px47MywxQBh13yXy5MmlqxXqk=',
       title: 'Festivals',
     },
     {
-      image: '/src/images/iconoir--community.png',
+      image: 'https://static.thenounproject.com/png/1071933-200.png',
       title: 'Community',
     },
     {
-      image: '/src/images/mdi--teach.png',
+      image: 'https://static.vecteezy.com/system/resources/thumbnails/041/886/566/small_2x/teaching-icon-training-education-icon-in-flat-style-school-classroom-lesson-illustration-vector.jpg',
       title: 'Music Lessons',
     },
   ];
