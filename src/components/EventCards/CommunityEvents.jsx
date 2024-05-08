@@ -1,18 +1,37 @@
-{/*import Card from '@mui/material/Card';
+import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Button } from '@mui/material';
 import Box from '@mui/material/Box';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import useFetchCommunity from '/src/components/hooks/useFetchCommunity.js';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setSelectedEvent } from '/src/redux/Slice.js';
 
 export default function ActionAreaCard() {
-    const [cards, setCards] = useState([...Array(4)]);
-    const [state, setState] = useState('initialState');
+    const { data } = useFetchCommunity();
+    const [eventIndex, setEventIndex] = useState(0);
+    console.log(data);
 
-    const addCards = () => {
-        setCards([ ...Array(4)]); 
+    const dispatch = useDispatch();
+    const onEventClick = event => {
+        dispatch(setSelectedEvent(event));
+    };
 
+    useEffect(() => {
+        if (data && data._embedded && data._embedded.events.length > 4) {
+            setEventIndex(0);
+        }
+    }, [data]);
+
+    const nextEvent = () => {
+        setEventIndex((prevIndex) => prevIndex + 4 % data._embedded.events.length);
+    };
+
+    const prevEvent = () => {
+        setEventIndex((prevIndex) => (prevIndex - 4 + data._embedded.events.length) % data._embedded.events.length);
     };
 
     return (
@@ -28,29 +47,36 @@ export default function ActionAreaCard() {
             gap: 2
         }}
         >
-        {cards.map((_, i) => (
-            <Card key={i} sx={{ maxWidth: 225 }}>
-            <CardActionArea>
-                <CardMedia
-                component="img"
-                height="225"
-                image="/src/images/pexels-martin-lopez-2240771 (1).jpg"
-                alt="Artist/Group Image"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    Concert this date: 01-01-25
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    This artist is playing in your area
-                </Typography>
-                </CardContent>
-            </CardActionArea>
+        <Button onClick={prevEvent} variant="contained" aria-label="Previous Events">
+            Prev
+        </Button>
+        {data && data._embedded && data._embedded.events.slice(eventIndex, eventIndex + 4).map((_event, index) => (
+            <Card key={index} sx={{ maxWidth: 225 }}>
+            <Link to={{ pathname: '/event-details', state: { eventId: _event.id } }} className='link-class'>
+                <CardActionArea onClick={(() => onEventClick(_event))}>
+                    <CardMedia
+                    component="img"
+                    height="225"
+                    image={_event.images[0].url}
+                    alt="Artist/Group Image"
+                    />
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {_event.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                    {_event.dates.start.localDate} 
+                    {_event._embedded.venues[0].name}, 
+                    {_event._embedded.venues[0].city.name}
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Link>
             </Card>
         ))}
-        <Button onClick={addCards} variant="contained" color="primary">
-            Add More Cards
+        <Button onClick={nextEvent} variant="contained" aria-label="Next Events">
+            Next
         </Button>
         </Box>
     );
-    }*/}
+}

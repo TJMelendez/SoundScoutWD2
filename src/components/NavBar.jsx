@@ -10,9 +10,7 @@ const NavBar = () => {
         <nav className='flex bg-black items-center justify-between'>
             <div className='navbar-links flex items-center space-x-20'>
                 <Link to ='/' className='link-class'>
-                    {/*<button onClick={handleClick}>*/}
                     <img className='w-32 h-32' src={logo} alt="Logo" />
-                    {/*</button>*/}
                 </Link>
                 <ul>
                     <li className='text-white text-2xl'><Link to='/request-promotion-form' className='link-class'>Request Promotion</Link></li>

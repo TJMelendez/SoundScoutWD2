@@ -1,7 +1,10 @@
 import createRoot from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider, createStore } from 'react-redux';
 import store from '/src/redux/store.js';
 import App from '/src/App.jsx';
+import soundScoutSlice from '/src/redux/Slice.js'
+
+const newStore = createStore(soundScoutSlice.reducer);
 
 createRoot(
   <Provider store={store}>

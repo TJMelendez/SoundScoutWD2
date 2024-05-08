@@ -8,8 +8,8 @@ const Footer = () => {
                 <ul>
                     <li>About Us</li>
                     <li>Careers</li>
-                    <li><a href='/request-promotion-form'>Request Promotion</a></li>
-                    <li><a href='/'>Search</a></li>
+                    <li><a href='/request-promotion-form' aria-label="Request Promotion">Request Promotion</a></li>
+                    <li><a href='/results' aria-label="Search">Search</a></li>
                 </ul>
             </div>
 
@@ -33,9 +33,7 @@ const Footer = () => {
 
             <div className='navbar-links flex items-center space-x-20'>
                 <Link to ='/' className='link-class'>
-                    {/*<button onClick={handleClick}>*/}
-                    <img className='w-32 h-32' src={logo} alt="Logo" />
-                    {/*</button>*/}
+                    <img className='w-32 h-32' src={logo} alt="Logo" aria-label="Home" />
                 </Link>
             </div>
         </footer>

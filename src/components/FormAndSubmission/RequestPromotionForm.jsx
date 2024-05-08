@@ -53,21 +53,21 @@ const RequestPromotionForm = () => {
                         <h3 className='mt-12 text-2xl font-semibold leading-9 max-md:mt-10 max-md:max-w-full pl-10'>Event Details</h3>
                         <div className='flex flex-1 gap-3.5 max-md:flex-wrap pl-10 pr-10'>
                             <div className='flex items-center gap-3'>
-                                <label htmlFor="eventName" className='my-auto'>Event/Studio Name:</label>
+                                <label htmlFor="eventName" className="my-auto" aria-label="Event/Studio Name">Event/Studio Name:</label>
                             </div>
                             <div className="shrink-0 max-w-full bg-white border border-black border-solid h-[45px] w-[366px]">
                                 <Field id="eventName" name="eventName" placeholder="My Event" />
                                 <ErrorMessage name="eventName" component="div" className='text-red-600' />
                             </div>
                             <div className='flex items-center gap-3'>
-                                <label htmlFor="dateTime" className='my-auto'>Date and Time:</label>
+                                <label htmlFor="dateTime" className='my-auto' aria-label='Date and Time'>Date and Time:</label>
                             </div>
                             <div className="shrink-0 max-w-full bg-white border border-black border-solid h-[45px] w-[366px]">
                                 <Field id="dateTime" name="dateTime" placeholder="DD-MM-YYYY at 12:00am" />
                                 <ErrorMessage name="dateTime" component="div" className='text-red-600' />
                             </div>
                             <div className='flex items-center gap-3'>
-                                <label htmlFor="nameAddress" className='my-auto'>Venue/Studio Name and Address:</label>
+                                <label htmlFor="nameAddress" className='my-auto' aria-label='Venue and Studio Name'>Venue/Studio Name and Address:</label>
                             </div>
                             <div className="shrink-0 max-w-full bg-white border border-black border-solid h-[45px] w-[366px]">
                                 <Field id="nameAddress" name="nameAddress" placeholder="Insert Here" />
@@ -77,31 +77,31 @@ const RequestPromotionForm = () => {
                     
                         <div className='flex flex-1 gap-3.5 max-md:flex-wrap pl-10 pr-10 pt-10'>
                             <div className='flex items-center gap-3'>
-                                <label htmlFor="eventDescription" className='my-auto'>Description of the Event:</label>
+                                <label htmlFor="eventDescription" className='my-auto' aria-label='Event Description'>Description of the Event:</label>
                             </div>
                             <div className="shrink-0 max-w-full bg-white border border-black border-solid h-[90px] w-[922px]">
                                 <Field id="eventDescription" name="eventDescription" placeholder="Insert Here" />
                             </div>
                         </div>
 
-                        <h3 className='mt-12 text-2xl font-semibold leading-9 max-md:mt-10 max-md:max-w-full pl-10'>Contact Information</h3>
+                        <h3 className='mt-12 text-2xl font-semibold leading-9 max-md:mt-10 max-md:max-w-full pl-10' aria-label='Contact Information'>Contact Information</h3>
                         <div className='flex flex-1 gap-3.5 max-md:flex-wrap pl-10 pr-10'>
                             <div className='flex items-center gap-3'>
-                                <label htmlFor="name" className='my-auto'>Name</label>
+                                <label htmlFor="name" className='my-auto' aria-label='name'>Name</label>
                             </div>
                             <div className="shrink-0 max-w-full bg-white border border-black border-solid h-[45px] w-[366px]">
                                 <Field id="name" name="name" placeholder="Jane Doe" />
                                 <ErrorMessage name="name" component="div" className='text-red-600' />
                             </div>
                             <div className='flex items-center gap-3'>
-                                <label htmlFor="email" className='my-auto'>Email</label>
+                                <label htmlFor="email" className='my-auto' aria-label='Email'>Email</label>
                             </div>
                             <div className="shrink-0 max-w-full bg-white border border-black border-solid h-[45px] w-[366px]">
                                 <Field id="email" name="email" placeholder="jane@acme.com" type="email" />
                                 <ErrorMessage name="email" component="div" className='text-red-600' />
                             </div>
                             <div className='flex items-center gap-3'>
-                                <label htmlFor="phoneNumber" className='my-auto'>Phone Number</label>
+                                <label htmlFor="phoneNumber" className='my-auto' aria-label='Phone Number'>Phone Number</label>
                             </div>
                             <div className="shrink-0 max-w-full bg-white border border-black border-solid h-[45px] w-[366px]">
                                 <Field id="phoneNumber" name="phoneNumber" placeholder="+44 00000 00000" />
@@ -116,15 +116,15 @@ const RequestPromotionForm = () => {
                                     <div className="flex flex-col max-md:ml-0 max-md:w-full leading-8 max-md:mt-10">
                                         <div className="flex gap-2.5 ml-10 max-md:ml-2.5">
                                             <label>
-                                                <Field type="radio" name="participantType" value="1" />
+                                                <Field type="radio" name="participantType" value="1" aria-label="Event Organiser" />
                                                 Event Organizer
                                             </label>
                                             <label>
-                                                <Field type="radio" name="participantType" value="2" />
+                                                <Field type="radio" name="participantType" value="2" aria-label="Performer/Band" />
                                                 Performer/Band
                                             </label>
                                             <label>
-                                                <Field type="radio" name="participantType" value="3" />
+                                                <Field type="radio" name="participantType" value="3" aria-label="Music Teacher" />
                                                 Music Teacher
                                             </label>
                                             <ErrorMessage name="participantType" component="div" className='text-red-600' /> 
@@ -139,55 +139,55 @@ const RequestPromotionForm = () => {
                                     <div className="flex flex-col max-md:ml-0 max-md:w-full leading-8 max-md:mt-10">
                                         <div className="flex gap-2.5 ml-10 max-md:ml-2.5">
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="1" />
+                                                <Field type="checkbox" name="eventType" value="1" aria-label="Concert/Show" />
                                                 Concert/Show
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="2" />
+                                                <Field type="checkbox" name="eventType" value="2" aria-label="Festival" />
                                                 Festival
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="3" />
+                                                <Field type="checkbox" name="eventType" value="3" aria-label="Recital" />
                                                 Recital
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="4" />
+                                                <Field type="checkbox" name="eventType" value="4" aria-label="Opera/Musical" />
                                                 Opera/Musical
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="5" />
+                                                <Field type="checkbox" name="eventType" value="5" aria-label="Open Mic Night" />
                                                 Open Mic Night
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="6" />
+                                                <Field type="checkbox" name="eventType" value="6" aria-label="Competition" />
                                                 Competition
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="7" />
+                                                <Field type="checkbox" name="eventType" value="7" aria-label="Workshop" />
                                                 Workshop
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="8" />
+                                                <Field type="checkbox" name="eventType" value="8" aria-label="Masterclass" />
                                                 Masterclass
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="9" />
+                                                <Field type="checkbox" name="eventType" value="9" aria-label="Conference" />
                                                 Conference
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="10" />
+                                                <Field type="checkbox" name="eventType" value="10" aria-label="Private Lesson" />
                                                 Private Lesson
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="11" />
+                                                <Field type="checkbox" name="eventType" value="11" aria-label="Group Lesson" />
                                                 Group Lesson
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="12" />
+                                                <Field type="checkbox" name="eventType" value="12" aria-label="Music Theory Class" />
                                                 Music Theory Class
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="eventType" value="13" />
+                                                <Field type="checkbox" name="eventType" value="13" aria-label="Other" />
                                                 Other
                                             </label>
                                         </div>
@@ -202,75 +202,75 @@ const RequestPromotionForm = () => {
                                     <div className="flex flex-col max-md:ml-0 max-md:w-full leading-8 max-md:mt-10">
                                         <div className="flex gap-2.5 ml-10 max-md:ml-2.5">
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="1" />
+                                                <Field type="checkbox" name="musicGenre" value="1" aria-label="Pop" />
                                                 Pop
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="2" />
+                                                <Field type="checkbox" name="musicGenre" value="2"aria-label="Rock" />
                                                 Rock
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="3" />
+                                                <Field type="checkbox" name="musicGenre" value="3" aria-label="Electronic/Dance" />
                                                 Electronic/Dance
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="4" />
+                                                <Field type="checkbox" name="musicGenre" value="4" aria-label="Indie" />
                                                 Indie
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="5" />
+                                                <Field type="checkbox" name="musicGenre" value="5" aria-label="Indie" />
                                                 Indie
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="6" />
+                                                <Field type="checkbox" name="musicGenre" value="6" aria-label="Hip Hop/Rap" />
                                                 Hip Hop/Rap
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="7" />
+                                                <Field type="checkbox" name="musicGenre" value="7" aria-label="R&B/Soul" />
                                                 R&B/Soul
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="8" />
+                                                <Field type="checkbox" name="musicGenre" value="8" aria-label="Folk" />
                                                 Folk
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="9" />
+                                                <Field type="checkbox" name="musicGenre" value="9" aria-label="Jazz" />
                                                 Jazz
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="10" />
+                                                <Field type="checkbox" name="musicGenre" value="10" aria-label="Classical" />
                                                 Classical
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="11" />
+                                                <Field type="checkbox" name="musicGenre" value="11" aria-label="Reggae" />
                                                 Reggae
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="12" />
+                                                <Field type="checkbox" name="musicGenre" value="12" aria-label="Salsa" />
                                                 Salsa
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="13" />
+                                                <Field type="checkbox" name="musicGenre" value="13" aria-label="Afrobeat" />
                                                 Afrobeat
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="14" />
+                                                <Field type="checkbox" name="musicGenre" value="14" aria-label="Bollywood" />
                                                 Bollywood
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="15" />
+                                                <Field type="checkbox" name="musicGenre" value="15" aria-label="Flamenco" />
                                                 Flamenco
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="16" />
+                                                <Field type="checkbox" name="musicGenre" value="16" aria-label="Celtic" />
                                                 Celtic
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="17" />
+                                                <Field type="checkbox" name="musicGenre" value="17" aria-label="Bhangra"/>
                                                 Bhangra
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="musicGenre" value="18" />
+                                                <Field type="checkbox" name="musicGenre" value="18" aria-label="Other" />
                                                 Other
                                             </label>
                                         </div>
@@ -286,63 +286,63 @@ const RequestPromotionForm = () => {
                                     <div className="flex flex-col max-md:ml-0 max-md:w-full leading-8 max-md:mt-10">
                                         <div className="flex gap-2.5 ml-10 max-md:ml-2.5">
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="1" />
+                                                <Field type="checkbox" name="instruments" value="1" aria-label="Piano" />
                                                 Piano
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="2" />
+                                                <Field type="checkbox" name="instruments" value="2" aria-label="Guitar" />
                                                 Guitar
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="3" />
+                                                <Field type="checkbox" name="instruments" value="3" aria-label="Violin"/>
                                                 Violin
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="4" />
+                                                <Field type="checkbox" name="instruments" value="4" aria-label="Voice/Singing"/>
                                                 Voice/Singing
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="5" />
+                                                <Field type="checkbox" name="instruments" value="5" aria-label="Drums/Percussion"/>
                                                 Drums/Percussion
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="6" />
+                                                <Field type="checkbox" name="instruments" value="6" aria-label="Flute"/>
                                                 Flute
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="7" />
+                                                <Field type="checkbox" name="instruments" value="7" aria-label="Clarinet"/>
                                                 Clarinet
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="8" />
+                                                <Field type="checkbox" name="instruments" value="8" aria-label="Saxophone"/>
                                                 Saxophone
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="9" />
+                                                <Field type="checkbox" name="instruments" value="9" aria-label="Cello"/>
                                                 Cello
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="10" />
+                                                <Field type="checkbox" name="instruments" value="10" aria-label="Trumpet"/>
                                                 Trumpet
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="11" />
+                                                <Field type="checkbox" name="instruments" value="11" aria-label="Bass Classical"/>
                                                 Bass (Classical)
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="12" />
+                                                <Field type="checkbox" name="instruments" value="12" aria-label="Bass Guitar"/>
                                                 Bass Guitar
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="13" />
+                                                <Field type="checkbox" name="instruments" value="13" aria-label="Ukulele"/>
                                                 Ukulele
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="14" />
+                                                <Field type="checkbox" name="instruments" value="14" aria-label="Trombone"/>
                                                 Trombone
                                             </label>
                                             <label>
-                                                <Field type="checkbox" name="instruments" value="15" />
+                                                <Field type="checkbox" name="instruments" value="15" aria-label="Other"/>
                                                 Other
                                             </label>
                                         </div>
@@ -354,14 +354,14 @@ const RequestPromotionForm = () => {
                         <p className='pl-10 self-start mt-2 text-xl font-medium leading-8 text-black max-md:ml-1'>Please provide any additional information, websites, or social media that can help us promote your event/studio.</p>
                         <div className='flex flex-1 gap-3.5 max-md:flex-wrap pl-10'>
                             <div className='flex items-center gap-3'>
-                                <label htmlFor="additionalInfo" className='my-auto'></label>
+                                <label htmlFor="additionalInfo" className='my-auto' aria-label="Additional Information"></label>
                             </div>
                             <div className="shrink-0 max-w-full bg-white border border-black border-solid h-[90px] w-[922px]">
                                 <Field id="additionalInfo" name="additionalInfo" placeholder="Insert Here" />
                             </div>
                         </div>
                         
-                        <div className="flex justify-center items-center">
+                        <div className="flex justify-center items-center" aria-label="Submit">
                             <button type="submit" className='bg-lime-300 hover:bg-lime-700 font-bold py-2 px-4 rounded border border-black mt-8 m-8'>Submit</button>
                         </div>
                         

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   popularEvents: [],
-  popularArtists: [],
+  communityEvents: [],
   selectedEvent: null,
   searchResults: [],
 };
@@ -14,7 +14,7 @@ const soundScoutSlice = createSlice({
     setPopularEvents(state, action) {
       state.popularEvents = action.payload;
     },
-    setPopularArtists(state, action) {
+    setCommunityEvents(state, action) {
       state.popularArtists = action.payload;
     },
     setSelectedEvent(state, action) {
@@ -28,7 +28,7 @@ const soundScoutSlice = createSlice({
 
 export const {
   setPopularEvents,
-  setPopularArtists,
+  setCommunityEvents,
   setSelectedEvent,
   setSearchResults,
 } = soundScoutSlice.actions;
